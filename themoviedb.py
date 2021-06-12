@@ -1,9 +1,10 @@
+# you have to use "https://www.themoviedb.org/" on this code.
 import requests
 
 class theMovieDb:
     def __init__(self):
-        self.api_url = "api_url"
-        self.api_key = "api_key"
+        self.api_url = "api_url" # please enter your api url before run the code!!!
+        self.api_key = "api_key" # please enter your api key before run the code!!!
     
     def getPopulars(self):
         response1 = requests.get(f"{self.api_url}/movie/popular?api_key={self.api_key}&language=en-US&page=1")
@@ -33,7 +34,7 @@ while True:
             print("Movies that you might interested:")
             for movie in movies['results']:
                 print(movie['name']) # you will get movie's titles
-
+# CNMALPS
 
 
 
