@@ -2,12 +2,12 @@ import requests
 
 class theMovieDb:
     def __init__(self):
-        self.api_url = "https://api.themoviedb.org/3"
-        self.api_key = "854f95b699d723d78c2982e3742a32f1"
+        self.api_url = "api_url"
+        self.api_key = "api_key"
     
     def getPopulars(self):
         response1 = requests.get(f"{self.api_url}/movie/popular?api_key={self.api_key}&language=en-US&page=1")
-        return response1.json() # dönen bilgiyi dict'e çevrildi
+        return response1.json()
     
     def getSearch(self, keyword):
         response2 = requests.get(f"{self.api_url}/search/keyword?api_key={self.api_key}&query={keyword}&language=en-US&page=1")
@@ -26,13 +26,13 @@ while True:
             movies = movieApi.getPopulars()
             print("Popular Movies:")
             for movie in movies['results']:
-                print(movie['title']) # filmlerin sadece isimleri 'title' (başlıkları) gelecek.
+                print(movie['title']) 
         elif secim == "2":
-            keyword = input("Keyword: ") # hakkında film izlemek istediğin anahtar kelime gir (example: 'Avrupa' :) )
+            keyword = input("Keyword: ") # enter the keyword you want to watch a movie about (example: 'Space')
             movies = movieApi.getSearch(keyword)
             print("Movies that you might interested:")
             for movie in movies['results']:
-                print(movie['name']) # filmlerin sadece isimleri 'title' (başlıkları) gelecek.
+                print(movie['name']) # you will get movie's titles
 
 
 
