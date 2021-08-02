@@ -1,4 +1,4 @@
-# you have to use "https://www.themoviedb.org/" on this code.
+# you have to use "https://www.themoviedb.org" on this code.
 import requests
 
 class theMovieDb:
